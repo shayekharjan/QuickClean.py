@@ -6,7 +6,7 @@ Preferably used in cohesion with a cron job script or task scheduler at interval
 
 When run, this tool moves sorts all your music, pictures, videos, and documents into the folders you instruct them to go to.
 
-Usage: 
+***Usage:*** 
 $$python QuickClean.py -s <path to directory to be cleaned> -m <music directory> -p <pictures directory> -v <pictures directory>
                                                                                                                 -d <documents directory>
                                                                                                                 
