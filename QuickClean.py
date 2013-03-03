@@ -8,28 +8,34 @@ import argparse
 
 parser = argparse.ArgumentParser(description='A quick way to clean out your cluttered folders.')
 parser.add_argument('-s','--source directory', help='Folder you want to clean out.', required=True)
-parser.add_argument('-m','--music directory', help='Description for bar argument', required=True)
-parser.add_argument('-p','--pictures directory', help='Description for bar argument', required=True)
-parser.add_argument('-v','--videos directory', help='Description for bar argument', required=True)
-parser.add_argument('-d','--documents directory', help='Description for bar argument', required=True)
+parser.add_argument('-m','--music directory', help='Description for bar argument', required=False)
+parser.add_argument('-p','--pictures directory', help='Description for bar argument', required=False)
+parser.add_argument('-v','--videos directory', help='Description for bar argument', required=False)
+parser.add_argument('-d','--documents directory', help='Description for bar arsgument', required=False)
 
 
-args = vars(parser.parse_args())
+#args = vars(parser.parse_args())
 
-os.chdir(args['source directory']) #source_dir
-destination_dirs = [args['music directory'],args['videos directory'],args['pictures directory'],args['documents directory']]
+os.chdir("/Users/shayekharjanamit/Downloads") #source_dir
+print os.getcwd()
+destination_dirs = ['/Users/shayekharjanamit/Music','/Users/shayekharjanamit/Videos','/Users/shayekharjanamit/Pictures','/Users/shayekharjanamit/Documents']
+print destination_dirs[0]
+print destination_dirs[1]
+print destination_dirs[2]
+print destination_dirs[3]
 
 #Parameters to clean.
 music = glob.glob("*.mp3") + glob.glob("*.flac") + glob.glob("*.aac")
-pictures = glob.glob("*.png") + glob.glob ("*.jpg") + glob.glob("*.bmp")
+pictures = glob.glob("*.png") + glob.glob ('*.jpg') + glob.glob("*.bmp")
 videos = glob.glob("*.avi") + glob.glob("*.mp4") + glob.glob("*.flv")
-documents = glob.glob ("*.pdf") + glob.glob ("*.ppt") + glob.glob("*.zip") + glob.glob("*.m")
+documents = glob.glob ('*.pdf') + glob.glob ('*.PDF') + glob.glob ("*.xls") + glob.glob ("*.xlsx") + glob.glob ("*.pptx") + glob.glob ("*.docx") + glob.glob("*.m") + glob.glob("*.ppt") + glob.glob("*.doc")
 
-#Creates music, videos, and pictures directories if they do not exist. 
-for directory in destination_dirs:
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
+print documents
+print videos
+print pictures
+print music 
+    
+   
 #Copies to destination directory, and then deletes the file. This is done because shutil's copy method has the ability to overwrite. 
 for songs in music:
     shutil.copy(songs,destination_dirs[0])
