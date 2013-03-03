@@ -17,12 +17,7 @@ parser.add_argument('-d','--documents directory', help='Description for bar arsg
 #args = vars(parser.parse_args())
 
 os.chdir("/Users/shayekharjanamit/Downloads") #source_dir
-print os.getcwd()
 destination_dirs = ['/Users/shayekharjanamit/Music','/Users/shayekharjanamit/Videos','/Users/shayekharjanamit/Pictures','/Users/shayekharjanamit/Documents']
-print destination_dirs[0]
-print destination_dirs[1]
-print destination_dirs[2]
-print destination_dirs[3]
 
 #Parameters to clean.
 music = glob.glob("*.mp3") + glob.glob("*.flac") + glob.glob("*.aac")
@@ -30,11 +25,6 @@ pictures = glob.glob("*.png") + glob.glob ('*.jpg') + glob.glob("*.bmp")
 videos = glob.glob("*.avi") + glob.glob("*.mp4") + glob.glob("*.flv")
 documents = glob.glob ('*.pdf') + glob.glob ('*.PDF') + glob.glob ("*.xls") + glob.glob ("*.xlsx") + glob.glob ("*.pptx") + glob.glob ("*.docx") + glob.glob("*.m") + glob.glob("*.ppt") + glob.glob("*.doc")
 
-print documents
-print videos
-print pictures
-print music 
-    
    
 #Copies to destination directory, and then deletes the file. This is done because shutil's copy method has the ability to overwrite. 
 for songs in music:
