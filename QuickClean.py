@@ -23,7 +23,7 @@ os.chdir(args.source)
 
 #Parameters to clean.
 music = glob.glob("*.mp3") + glob.glob("*.flac") + glob.glob("*.aac")
-pictures = glob.glob("*.png") + glob.glob ('*.jpg') + glob.glob("*.bmp")
+pictures = glob.glob("*.png") + glob.glob ('*.jpg') + glob.glob("*.bmp")+ glob.glob("*.gif")
 videos = glob.glob("*.avi") + glob.glob("*.mp4") + glob.glob("*.flv") + glob.glob("*.mkv") + glob.glob("*.mov")
 documents = glob.glob ('*.pdf') + glob.glob ('*.PDF') + glob.glob ("*.xls") + glob.glob ("*.xlsx") + glob.glob ("*.pptx") + glob.glob ("*.docx") + glob.glob("*.m") + glob.glob("*.ppt") + glob.glob("*.doc")
 
